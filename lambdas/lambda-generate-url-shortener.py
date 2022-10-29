@@ -67,10 +67,10 @@ def getDynamoData(table: str, primaryKey: str, key: str, sortKey: dict = None):
         d = TypeDeserializer()
         if "Item" in r:
             # chave localizada, retorna os dados
-            return { "success": False, "message": "Ok", "data": json.loads(json.dumps({k: d.deserialize(value=v) for k, v in r['Item'].items()}, default=roundFloat)) }
+            return { "success": True, "message": "Ok", "data": json.loads(json.dumps({k: d.deserialize(value=v) for k, v in r['Item'].items()}, default=roundFloat)) }
         else:
-            # chave não localizada
-            return { "success": False, "message": "Nenhum dado localizado...", "data": None }
+            # chave não localizada, mas consulta realizada com sucesso
+            return { "success": True, "message": "Nenhum dado localizado...", "data": None }
     except Exception as err:
         print("Falha ao obter dados do DynamoDB")
         print("Table: ", table)

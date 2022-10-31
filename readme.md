@@ -344,7 +344,7 @@ Em `Settings`, no campo `Alternative domain name (CNAME) - optional` clique no b
 ![CloudFront](./assets/cloudfront03.png)
 \
 \
-Ainda no campo `Seetings` um pouco mais pra baixo na tela, no campo `Default root object`, informe o nome do arquivo que deverá ser o default do diretório root, em nosso caso informe `index.html`. Em seguida clique em `Create distribution`.\
+Ainda no campo `Settings` um pouco mais pra baixo na tela, no campo `Default root object`, informe o nome do arquivo que deverá ser o default do diretório root, em nosso caso informe `index.html`. Em seguida clique em `Create distribution`.\
 \
 ![CloudFront](./assets/cloudfront04.png)
 \
@@ -394,8 +394,7 @@ Na criação do registro, deixe o campo `Record name` vazio, em `Record type` se
 ![Route53](./assets/route5302.png)
 \
 \
-Aguarde alguns segundos para garantir que o DNS já foi propagado (geralmente é quase instantâneo), e nesse momento toda configuração necessária já foi realizada e sua aplicação já está pronta para ser testada.\
-\
+Aguarde alguns segundos para garantir que o DNS já foi propagado (geralmente é quase instantâneo), e nesse momento toda configuração necessária já foi realizada e sua aplicação já está pronta para ser testada.
 
 ### Passo 8: Vamos testar
 
@@ -406,9 +405,7 @@ Vamos abrir essa URL em um browser, o resultado esperado é que automaticamente 
 ![Teste](./assets/teste01.png)
 \
 \
-It's Works!!!\
-\
-\
+It's Works!!!
 
 ### Extra class
 

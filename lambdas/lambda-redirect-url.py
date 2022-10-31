@@ -62,7 +62,7 @@ def generateS3PreSignedURL(s3URI: str, ttl: int):
     bucket = s3URI.replace('s3://', '').split('/')[0]
     objectKey = s3URI.replace(f"s3://{bucket}/", '')
     # define o tempo de expiracao
-    expiration = ttl
+    expiration = int(ttl) - int(time.time())
     try:
         client = boto3.client('s3')
         url = client.generate_presigned_url(
@@ -96,7 +96,7 @@ def redirectURL(code: str):
                 # codigo localizado, verifica o tipo de protocolo se eh http ou s3
                 if r['data']['urlOriginal'][:5].lower() == "s3://":
                     # uri do S3, gera uma URL auto assinada para redirecionar
-                    s3url = generateS3PreSignedURL(r['data']['urlOriginal'], r['data']['ttl'])
+                    s3url = generateS3PreSignedURL(r['data']['urlOriginal'], r['data']['dataExclusao'])
                     if s3url['success']:
                         # url pre assinada gerada com sucesso, retorna os dados
                         redirect = s3url['data']

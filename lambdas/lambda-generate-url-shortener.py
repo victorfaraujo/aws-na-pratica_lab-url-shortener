@@ -155,7 +155,7 @@ def generateShortenerURL(data: dict):
                     "code": data['id'],
                     "urlEncurtada": data['urlEncurtada'],
                     "urlOriginal": data['urlOriginal'],
-                    "validade": f"{datetime.fromtimestamp(int(data['dataExclusao'])).strftime('%Y-%m-%dT%H:%M:%S%z')[:-2]}:00"
+                    "validade": f"{datetime.fromtimestamp(int(data['dataExclusao'])).strftime('%Y-%m-%dT%H:%M:%S%z')}"
                 }
             }
         else:

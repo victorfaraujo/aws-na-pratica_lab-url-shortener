@@ -60,7 +60,9 @@ Dê um nome para sua *IAM Role*, para fins de exemplo utilizarei "role-lab-urlsh
 ![IAM Role](./assets/iamrole04.png)
 \
 \
-Agora precisamos, definir a relação de confiança da Role recem criada para que ela funcione com o Lambda@Edge, acesse a Role, e em `Trust relationships` clique em `Edit trust policy`.\
+Agora precisamos, definir a relação de confiança da Role recem criada para que ela funcione com o Lambda@Edge. Procure pela role criada na tela de listagem e em seguida acesse a Role, e em `Trust relationships` clique em `Edit trust policy`.\
+\
+![IAM Role](./assets/iamrole07.png)
 \
 ![IAM Role](./assets/iamrole05.png)
 \
@@ -255,8 +257,10 @@ A primeira parte do nosso encurtador de URL já está pronta, já é possível r
 
 Aqui criaremos uma função Lambda que fará o redirecionamento da URL encurtada para a URL original.\
 \
-Para criação do Lambda, basta seguir o [passo 3](https://github.com/cloudfaster-academy-workshop/lab-url-shortener#passo-3-criar-a-fun%C3%A7%C3%A3o-lambda-que-ir%C3%A1-gerar-a-url-encurtada) até o momento de adicionar o código diretamente no *Browser*.\
-\
+Para criação do Lambda, basta seguir o [passo 3](https://github.com/cloudfaster-academy-workshop/lab-url-shortener#passo-3-criar-a-fun%C3%A7%C3%A3o-lambda-que-ir%C3%A1-gerar-a-url-encurtada) até o momento de adicionar o código diretamente no *Browser*.
+
+> **Atenção:** No momento de gerar o nome do Lambda, utilize o nome "lambda-redirect-url".
+
 Nessa outra função Lambda, utilizaremos nosso segundo código lambda que terá o nome "lambda-redirect-url", lembre-se de utilizar esse nome no momento de criar a função Lambda, e depois utilize o arquivo [`lambdas/lambda-redirect-url.py`](https://github.com/cloudfaster-academy-workshop/lab-url-shortener/blob/main/lambdas/lambda-redirect-url.py), disponível neste repositório, cole-o no editor de código da função Lambda.\
 \
 Substitua as variáveis `DYNAMODB_TABLE` e `AWS_REGION` (linhas 9 e 11 do código) com os valores corretos para sua tabela do DynamoDB criado no passo 2. Ao finalizar clique em `Deploy`.\
@@ -295,9 +299,9 @@ Na próxima tela, adicione o dominio/subdomínio que será assinado pelo certifi
 ![ACM](./assets/acm02.png)
 \
 \
-Você será redirecionado para a listagem de certificados disponíveis, caso seu certificado não apareça, basta clicar no botão de "Refresh". Note que ele estará com o status "Pending validation". Clique sobre o identificador do certificado criado para visualizarmos o status e também os domínios.
+Você será redirecionado para a listagem de certificados disponíveis, caso seu certificado não apareça, basta clicar no botão de "Refresh". Note que ele estará com o status "Pending validation". Clique sobre o identificador do certificado criado para visualizarmos o status e também os domínios.\
 \
-Na próxima tela, será possível visualizar os dados de configuração que devemos colocar em nosso serviço de DNS, como estamos utilizando o Route 53, temos um botão que já faz toda a configuração para a gente, basta clicar em `Create records in Route 53`\.
+Na próxima tela, será possível visualizar os dados de configuração que devemos colocar em nosso serviço de DNS, como estamos utilizando o Route 53, temos um botão que já faz toda a configuração para a gente, basta clicar em `Create records in Route 53`.\
 \
 ![ACM](./assets/acm03.png)
 \

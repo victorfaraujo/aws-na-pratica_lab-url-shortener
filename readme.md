@@ -360,7 +360,7 @@ Ao finalizar, uma tela informando que a distribuição foi criada será exibida,
 \
 Agora iremos fazer o vinculo do CloudFront com o Lambda, navegue até o serviço *AWS Lambda* ou acesse diretamente por esse link: <https://console.aws.amazon.com/lambda>.\
 \
-Procure pela função que criamos no passo 5, no nosso caso "lambda-redirect-url.py" e clique nele. Nossa função Lambda será aberta e teremos um botão `Add trigger` clique nele.\
+Procure pela função que criamos no passo 5, no nosso caso "lambda-redirect-url.py" e clique nele. Nossa função Lambda será aberta e teremos um botão `Add trigger`, clique nele.\
 \
 ![Lambda](./assets/lambda301.png)
 \

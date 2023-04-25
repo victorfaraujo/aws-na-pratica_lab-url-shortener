@@ -15,7 +15,7 @@ Para criar uma nova URL encurtada, o primeiro passo é informar para aplicação
 \
 Agora com a URL na mão, atravéz de um Browser qualquer, poderemos digita-lo na barra de endereços, esse endereço será traduzido pelo *Amazon Route 53* e encaminhará a requisição para o *Amazon CloudFront*, que assim que recebe a requisição, dispara uma função do *AWS Lambda* que irá procurar o código informado na tabela do *Amazon DynamoDB* e retornará o endereço para onde o *Amazon CloudFront* irá realizar o redirecionamento. Esse endereço poderá ser uma URL externa ou até uma URL pré-assinada de um objeto em um Bucket do *Amazon S3*.\
 \
-Para adicionarmos uma camada de segurança para nossa aplicação, utilizaremos o *AWS WAF* para ser noss Web Application Firewall, e também adicionaremos um serviço de SSL para criptografia de dados em trânsito com o *AWS Certificate Manager*, esses serviços são interligados diretamente nos nossos serviços do *Amazon CloudFront* e *Amazon API Gateway*. Para que nossa função do *AWS Lambda* possa acessar outros serviços da AWS, adicionamos uma função do *AWS IAM Role*. E, finalmente, para analisar tudo que acontece na nossa aplicação, temos o *Amazon CloudWatch Logs* que armazenará todos os LOGS gerados pela aplicação.
+Para adicionarmos uma camada de segurança para nossa aplicação, utilizaremos o *AWS WAF* para ser nosso Web Application Firewall, e também adicionaremos um serviço de SSL para criptografia de dados em trânsito com o *AWS Certificate Manager*, esses serviços são interligados diretamente nos nossos serviços do *Amazon CloudFront* e *Amazon API Gateway*. Para que nossa função do *AWS Lambda* possa acessar outros serviços da AWS, adicionamos uma função do *AWS IAM Role*. E, finalmente, para analisar tudo que acontece na nossa aplicação, temos o *Amazon CloudWatch Logs* que armazenará todos os LOGS gerados pela aplicação.
 
 ## Hands-on
 
@@ -447,7 +447,7 @@ O `Body` da nossa requisição ficará algo parecido com o abaixo: (altere a url
 }
 ```
 
-Envie a requisição e copie a `urlEncurtada` que será gerada no retorno da requisição.\
+Envie a requisição e copie a `urlEncurtada` que será gerada no retorno da requisição.
 \
 ![Teste](./assets/teste05.png)
 \
